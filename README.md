@@ -3,7 +3,7 @@ You can create a music environment with given instructions
 
 C <Name> ---> Create a person profile
 S <Name> <Song> ---> Add a song for a person profile 
-E <Name> <Song> ---> Delete a song in a profile
+E <Name> <Song> ---> Delete a song in a profile         
 L <Name> --->  Lists the songs of the person
 N ---> List all names of registered people
 M ---> List all the songs that liked by anyone
