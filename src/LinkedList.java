@@ -167,27 +167,25 @@ public class LinkedList {
         }
         if (map.isEmpty())
             System.out.println("There is no song in the environment.");
-        else if(map.size() == 1){
+        else if (map.size() == 1) {
             for (Map.Entry<String, Integer> iterator : map.entrySet())
                 System.out.println("The song " + "'" + iterator.getKey() + "'" + " is liked from " + iterator.getValue() + " people.");
 
-        }
-        else if (map.size() == 2) {
-            String otherKey = "";
+        } else if (map.size() == 2) {
             String firstKey = "";
-            int max = Collections.max(map.values(), null);
+            int max = 0;
             for (Map.Entry<String, Integer> iterator : map.entrySet()) {
-                if (iterator.getValue() == max)
+                if (iterator.getValue() > max) {
                     firstKey = iterator.getKey();
-                else
-                    otherKey = iterator.getKey();
+                    max = iterator.getValue();
+                }
             }
-            System.out.println("The song " + "'" + firstKey + "'" + " is liked from " + map.get(firstKey) + " people.");
-            System.out.println("The song " + "'" + otherKey + "'" + " is liked from " + map.get(otherKey) + " people.");
+            System.out.println("The song " + "'" + firstKey + "'" + " is liked from " + max + " people.");
+            map.remove(firstKey);
+            for (Map.Entry<String, Integer> iterator : map.entrySet())
+                System.out.println("The song " + "'" + iterator.getKey() + "'" + " is liked from " + iterator.getValue() + " people.");
 
-        }
-        else {
-            map.size();
+        } else {
             int max = 0;
             int counter = 0;
             String key = "";
