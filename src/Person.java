@@ -1,7 +1,8 @@
+
 public class Person {
     private String personName;
     Person next;
-    private LinkedList likedSong = new LinkedList();
+    private LinkedList likedSongs = new LinkedList();
 
     public Person(String personName) {
         this.personName = personName;
@@ -9,20 +10,15 @@ public class Person {
 
     }
 
-    public void setPersonName(String personName) {
-        this.personName = personName;
-    }
-
     public String getPersonName() {
         if (personName != null)
             return personName;
         else
             return null;
-    }
+    }// O(1)
 
-    public LinkedList getLikedSong() {
-        return likedSong;
-    }
-
-
+    public LinkedList getLikedSongs() {
+        return likedSongs;
+    }// O(1)
 }
+
